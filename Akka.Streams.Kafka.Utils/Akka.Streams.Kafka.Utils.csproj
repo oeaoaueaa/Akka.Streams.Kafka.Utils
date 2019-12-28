@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <RepositoryUrl>https://github.com/oeaoaueaa/Akka.Streams.Kafka.Utils</RepositoryUrl>
+    <PackageTags>akka-streams; kafka</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Akka.Streams.Kafka" Version="1.0.0-beta1" />
+  </ItemGroup>
+
+</Project>
