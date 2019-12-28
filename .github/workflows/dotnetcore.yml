@@ -17,3 +17,6 @@ jobs:
       run: dotnet build --configuration Release
     - name: Test with dotnet
       run: dotnet test Akka.Streams.Kafka.Utils.Tests
+    - name: Publish
+      run: npm publish
+      if: github.event == 'push' && github.branches == 'master'
