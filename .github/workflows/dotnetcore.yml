@@ -14,6 +14,7 @@ jobs:
       with:
         dotnet-version: 2.2.108
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+        source-url: https://nuget.pkg.github.com/oeaoaueaa/index.json
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - name: Build with dotnet
@@ -23,4 +24,4 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release
     - name: Nuget Publish
-      run: dotnet nuget push "Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg" --source "https://nuget.pkg.github.com/oeaoaueaa/index.json"
+      run: dotnet nuget push "Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg"
