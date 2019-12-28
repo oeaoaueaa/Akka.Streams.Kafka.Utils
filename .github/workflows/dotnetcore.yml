@@ -19,4 +19,3 @@ jobs:
       run: dotnet test Akka.Streams.Kafka.Utils.Tests
     - name: Publish
       run: npm publish
-      if: github.ref == 'master'
