@@ -14,6 +14,8 @@ jobs:
       with:
         dotnet-version: 2.2.108
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Test with dotnet
