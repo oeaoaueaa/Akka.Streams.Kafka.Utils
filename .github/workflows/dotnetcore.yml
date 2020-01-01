@@ -23,4 +23,4 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release Akka.Streams.Kafka.Utils
     - name: Nuget Publish
-      run: dotnet nuget push "Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg"
+      run: dotnet nuget push "Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg" --source "github"
