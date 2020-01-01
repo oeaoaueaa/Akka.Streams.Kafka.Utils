@@ -16,6 +16,7 @@ jobs:
         source-url: https://nuget.pkg.github.com/oeaoaueaa/index.json
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Test with dotnet
