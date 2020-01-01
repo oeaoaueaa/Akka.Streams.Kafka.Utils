@@ -17,14 +17,14 @@ jobs:
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Setup NuGet config
-      run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' nuget.config > nuget.config
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Test with dotnet
       run: dotnet test Akka.Streams.Kafka.Utils.Tests
     - name: Pack
       run: dotnet pack --configuration Release Akka.Streams.Kafka.Utils
+    - name: Setup NuGet config
+      run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' nuget.config > nuget.config    
     - name: Nuget Publish
       run: dotnet nuget push "Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg" --source "github"
       env:
