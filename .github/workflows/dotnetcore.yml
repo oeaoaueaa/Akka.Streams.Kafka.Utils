@@ -17,6 +17,8 @@ jobs:
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Setup NuGet config
+      run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' nuget.config > nuget.config
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Test with dotnet
