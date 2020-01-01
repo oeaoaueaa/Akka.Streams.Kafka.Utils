@@ -6,6 +6,13 @@
     <FileVersion>1.0.0.1</FileVersion>
     <RepositoryUrl>https://github.com/oeaoaueaa/Akka.Streams.Kafka.Utils</RepositoryUrl>
     <PackageTags>akka-streams; kafka</PackageTags>
+
+    <PackageId>Akka.Streams.Kafka.Utils</PackageId>
+    <Version>1.0.0.1</Version>
+    <Authors>oeaoaueaa</Authors>
+    <Company>oeaoaueaa</Company>
+    <PackageDescription>Akka.Streams.Kafka.Utils</PackageDescription>
+    <RepositoryUrl>https://github.com/oeaoaueaa/Akka.Streams.Kafka.Utils</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup>
