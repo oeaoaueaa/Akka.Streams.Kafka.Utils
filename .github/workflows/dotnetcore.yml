@@ -24,14 +24,16 @@ jobs:
       run: dotnet test Akka.Streams.Kafka.Utils.Tests
     - name: Pack
       run: dotnet pack --configuration Release Akka.Streams.Kafka.Utils
-    - name: Setup NuGet config
-      run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' nuget.config > nuget.config    
+    #- name: Setup NuGet config
+    #  run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' nuget.config > nuget.config    
     #- name: Setup Nuget.exe
     #  uses: warrenbuckley/Setup-Nuget@v1
     - name: Install NuGet client
       uses: warrenbuckley/Setup-Nuget@v1
-    #- name: Download latest NuGet (cross-platform)
-    #  uses: olegtarasov/download-nuget@v1
+    - name: Add private GitHub registry to NuGet
+      run: nuget sources add -name "github" -Source https://nuget.pkg.github.com/oeaoaueaa/index.json -Username oeaoaueaa -Password ${{ secrets.GITHUB_TOKEN }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Nuget Publish
      # run: dotnet nuget push Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg --source "github"
       run: nuget push Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg -Source "github" -SkipDuplicate
