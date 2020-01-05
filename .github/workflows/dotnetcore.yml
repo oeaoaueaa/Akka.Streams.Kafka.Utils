@@ -34,10 +34,8 @@ jobs:
       run: nuget sources add -name "github" -Source https://nuget.pkg.github.com/oeaoaueaa/index.json -Username oeaoaueaa -Password ${{ secrets.GITHUB_TOKEN }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: where
-      run: cd
     - name: Nuget Publish
-      run: dotnet nuget push Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg --source "github"
+      run: dotnet nuget push Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.*.nupkg --source "github"
       #run: nuget push ./Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg -Source "github" -SkipDuplicate -ApiKey ${{ secrets.GITHUB_TOKEN }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
