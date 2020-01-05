@@ -31,6 +31,6 @@ jobs:
       uses: olegtarasov/download-nuget@v1
     - name: Nuget Publish
      # run: dotnet nuget push Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg --source "github"
-      run: nuget push Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg -Source "github" -SkipDuplicate
+      run: /home/runner/work/_temp/nuget.exe push Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg -Source "github" -SkipDuplicate
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
