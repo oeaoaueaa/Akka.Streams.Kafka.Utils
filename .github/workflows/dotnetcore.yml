@@ -35,7 +35,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Nuget Publish
-      run: dotnet nuget push Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.*.nupkg --source "github"
-      #run: nuget push ./Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg -Source "github" -SkipDuplicate -ApiKey ${{ secrets.GITHUB_TOKEN }}
+      # run: dotnet nuget push Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.*.nupkg --source "github"
+      run: nuget push D:\a\Akka.Streams.Kafka.Utils\Akka.Streams.Kafka.Utils\Akka.Streams.Kafka.Utils\bin\Release\Akka.Streams.Kafka.Utils.1.0.0.1.nupkg -Source "github" -SkipDuplicate -ApiKey ${{ secrets.GITHUB_TOKEN }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
