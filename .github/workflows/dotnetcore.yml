@@ -25,8 +25,8 @@ jobs:
       run: dotnet pack --configuration Release Akka.Streams.Kafka.Utils
     - name: Setup NuGet config
       run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' nuget.config > nuget.config    
-    - name: Setup Nuget.exe
-      uses: warrenbuckley/Setup-Nuget@v1
+    #- name: Setup Nuget.exe
+    #  uses: warrenbuckley/Setup-Nuget@v1
     - name: Nuget Publish
      # run: dotnet nuget push Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg --source "github"
       run: nuget push Akka.Streams.Kafka.Utils/bin/Release/Akka.Streams.Kafka.Utils.1.0.0.nupkg -Source "github" -SkipDuplicate
